@@ -13,16 +13,16 @@ def sql_create():
     else:
         print('ошибка подключения бд')
 
-    db.execute("CREATE TABLE IF NOT EXISTS mentors "
+    db.execute("CREATE TABLE IF NOT EXISTS anketa "
                "(id INTEGER PRIMARY KEY, "
                "name TEXT, age INTEGER, "
-               "direction TEXT, group TEXT)")
+               "direction TEXT)")
     db.commit()
 
 
 async def sql_command_insert(state):
     async with state.proxy() as data:
-        cursor.execute("INSERT INTO mentors VALUES (?, ?, ?, ?, ?)", tuple(data.values()))
+        cursor.execute("INSERT INTO anketa VALUES (?, ?, ?, ?, ?)", tuple(data.values()))
         db.commit()
 
 

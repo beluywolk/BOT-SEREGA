@@ -1,6 +1,6 @@
 from aiogram import types, Dispatcher
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from config import bot, dp, photos
+from config import bot, dp, photos, ADMINS
 from keyboards.client_kb import start_markup
 from random import choice
 from database.bot_db import sql_command_random
@@ -8,6 +8,9 @@ from database.bot_db import sql_command_random
 async def start_handler(message: types.Message):
     await bot.send_message(message.chat.id, f'привет, @{message.from_user.username}, \nкомманды:'
                                             f'\n/start\n/meme\n/prikol\n чтобы закрепить сообщение !pin')
+
+
+
 
 
 

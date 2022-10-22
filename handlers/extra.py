@@ -4,6 +4,8 @@ from config import bot, dp
 
 
 async def echo(message: types.Message):
+
+
     m = message.text
     if m.startswith('!'):
         if not message.reply_to_message:
