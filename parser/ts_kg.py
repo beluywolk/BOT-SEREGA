@@ -22,7 +22,7 @@ def get_data(html):
     for i in a:
 
         serial = {
-            'title': i.find('a').find('p', class_='show-title').getText,
+            'title': i.find('a').find('p').getText,
             'link': i.find('a').get('href'),
         }
         series.append(serial)
